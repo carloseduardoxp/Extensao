@@ -13,6 +13,11 @@ public class PessoaDao {
 	@PersistenceContext(unitName="ExtensaoPU")
 	private EntityManager entityManager;
 	
+	/*
+	public PessoaDao(EntityManager entityManager) {
+		this.entityManager = entityManager;
+	}*/
+	
 	@SuppressWarnings("unchecked")
 	public List<Pessoa> getPessoas() {
 		Query query = entityManager.createQuery("from Pessoa");
