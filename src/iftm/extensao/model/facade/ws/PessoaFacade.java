@@ -1,4 +1,4 @@
-package iftm.extensao.model.facade;
+package iftm.extensao.model.facade.ws;
 
 import java.util.List;
 
