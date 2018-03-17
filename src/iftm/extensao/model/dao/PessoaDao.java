@@ -23,6 +23,10 @@ public class PessoaDao {
 		Query query = entityManager.createQuery("from Pessoa");
 		return query.getResultList();
 	}
+	
+	public void salvarPessoa(Pessoa pessoa) {
+		entityManager.persist(pessoa);
+	}
 
 	
 	

@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -29,10 +30,10 @@ public class Pessoa implements Serializable {
 	@Column(name="NM_PESSOA",length=255,nullable=false)
 	private String nome;
 	
-	@ManyToMany(mappedBy="participantes")
+	@ManyToMany(mappedBy="participantes",fetch=FetchType.LAZY)
 	private List<Projeto> participacoes;
 	
-	@OneToMany(mappedBy="autor")
+	@OneToMany(mappedBy="autor",fetch=FetchType.LAZY)
 	private List<Projeto> projetosAutor;
 
 	public Pessoa() {
